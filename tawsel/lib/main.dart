@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tawsel/Home.dart';
+import 'package:tawsel/Tabbar.dart';
 import 'package:tawsel/favorites.dart';
 import 'package:tawsel/navigation.dart';
 import 'package:tawsel/proccess.dart';
@@ -23,10 +24,14 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: 
+      TTabBar(tabs: [
+        ////HomePage(),
+        //Components()
+      ],)
       //Favorites()
       //HomePage()
       //Components()
-      Bottom()
+      //Bottom()
       //NavigationBar(destinations: const [Icon(Icons.abc), Icon(Icons.access_alarm)],)
       //Proccess()
       //const MyHomePage(title: 'Flutter Demo Home Page'),
