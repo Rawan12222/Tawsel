@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "68847784165",
+    "project_id": "tawsel-app",
+    "storage_bucket": "tawsel-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68847784165:android:e54e727a8850043631c40c",
+        "android_client_info": {
+          "package_name": "com.example.tawsel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAqWvpsWrW2XprXk53WS07szaQ1a_ASX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
