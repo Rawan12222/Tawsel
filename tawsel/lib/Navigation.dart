@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:tawsel/Components.dart';
 import 'package:tawsel/Home.dart';
+import 'package:tawsel/MyCart.dart';
+import 'package:tawsel/NewHome.dart';
 import 'package:tawsel/Proccess.dart';
 import 'package:tawsel/favorites.dart';
 
@@ -29,10 +31,10 @@ class _Bottom extends State<Bottom> {
           body: IndexedStack(
             index: controller.tabIndex,
             children: [
-              HomePage(),
+              NewHome(),
               Text("shop"),
               //myCart2(),
-              Text("cart"),
+              MyCart(),
              
               Favorites(),
               Proccess(),
@@ -55,16 +57,16 @@ class _Bottom extends State<Bottom> {
                    ),
 
                   GButton(
-                  icon: Icons.shopping_cart_outlined,
-                  text: 'Shop'),
+                  icon: Icons.favorite,
+                  text: 'Favorites'),
 
                   GButton(
-                  icon: Icons.shopping_bag_outlined,
+                  icon: Icons.shopping_cart,
                   text: 'Cart'),
 
                   GButton(
-                  icon: Icons.favorite_outline,
-                  text: 'Favorite'),
+                  icon: Icons.chat,
+                  text: 'chat'),
 
                   GButton(
                   icon: Icons.person,

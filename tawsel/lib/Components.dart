@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tawsel/MyCart.dart';
 
 import 'const.dart';
 
@@ -129,7 +131,7 @@ class _ComponentsState extends State<Components> {
                       borderRadius: BorderRadius.circular(40)
                     ),
                     child: TextButton(
-                    onPressed: (){}, 
+                    onPressed: ()=>Get.to(MyCart()), 
                     child: Text("Apply", style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Color.fromRGBO(255, 255, 255, 1))),)
                     )
                   ),

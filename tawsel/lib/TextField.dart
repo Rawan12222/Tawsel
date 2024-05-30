@@ -29,7 +29,7 @@ class TTextField extends StatelessWidget {
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       labelText: labeltext,
-                      suffixIcon: Icon(Icons.check,color: Color.fromRGBO(42, 169, 82, 1),size: 19,),
+                      //suffixIcon: Icon(Icons.check,color: Color.fromRGBO(42, 169, 82, 1),size: 19,),
                       filled: true,
                       fillColor:Color.fromRGBO(255, 255, 255, 1) ,
                       labelStyle:GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 11, fontWeight: FontWeight.w400, color: Color.fromRGBO(155, 155, 155, 1))) , 

@@ -11,10 +11,23 @@ class NewHome extends StatefulWidget {
 }
 
 class _NewHomeState extends State<NewHome> {
+   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
+        final currentWidth = MediaQuery.of(context).size.width-36.4285;
+    final currenheight = MediaQuery.of(context).size.height+128.571429;
+    return DefaultTabController(length: 5, 
+    
+    child: Scaffold(
+      //appBar: AppBar(
+        //bottom: TabBar(tabs: [
+          //Text("All"),
+              //Text("Burgers"),
+              //Text("Juice"),
+            //  Text("Bread"),
+          //    Text("Pizza")
+        //]),
+      //),
       body: Container(
 
         child: SingleChildScrollView(
@@ -22,6 +35,8 @@ class _NewHomeState extends State<NewHome> {
           padding: const EdgeInsets.only(left: 22, right: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            //crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
             children: [
             Padding(
               padding: const EdgeInsets.only( top: 39),
@@ -38,8 +53,8 @@ class _NewHomeState extends State<NewHome> {
                   width: 343,
                   decoration: BoxDecoration(
                     border: Border.all(color: kprimaryColor),
-                    borderRadius: BorderRadius.circular(25),
-                    color: Colors.white
+                    borderRadius: BorderRadius.circular(40),
+                    //color: Colors.white
                   ),
                   
                   child: TextField(
@@ -50,7 +65,7 @@ class _NewHomeState extends State<NewHome> {
                             labelText: "Search",
                             prefixIcon: Icon (Icons.search,size: 36,),
                             filled: true,
-                            //fillColor:kBackgroundColor ,
+                            fillColor:Colors.white ,
                             labelStyle:GoogleFonts.inter(textStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color:kTextColor)) , 
                             
                           ),
@@ -64,6 +79,23 @@ class _NewHomeState extends State<NewHome> {
             ),
 
             
+              Padding(
+                padding: const EdgeInsets.fromLTRB(22,7,0,0),
+                child: TabBar(
+                   indicator: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50), 
+                          border: Border.all(color: kActiveIconColor),// Creates border
+                 color: Color.fromRGBO(255, 255, 255, 1)),
+                isScrollable: true,
+                  tabs: [
+                   Text("All", style: TextStyle(color: Colors.black),),
+                  
+                Text("Burgers", style: TextStyle(color: Colors.black)),
+                Text("Juice", style: TextStyle(color: Colors.black)),
+                Text("Bread", style: TextStyle(color: Colors.black)),
+                Text("Pizza", style: TextStyle(color: Colors.black))
+                ]),
+              ),
 
 
              Padding(
@@ -157,7 +189,7 @@ class _NewHomeState extends State<NewHome> {
 
 
 
-    );
+    ));
   }
 
   Container _cards ({required String foodName, required String image, required String aPrice,required String bPrice}){
