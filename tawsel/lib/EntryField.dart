@@ -13,6 +13,7 @@ class EntryField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: myController,
+      
       decoration: InputDecoration(
         labelText: labeltext,
         filled: true,

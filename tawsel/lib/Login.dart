@@ -75,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
 
               Padding(
                 padding: const EdgeInsets.fromLTRB(23,31,0,0),
-                child: EntryField(labeltext:'password',myController: _controllerPassword),
+                child: EntryField(labeltext:'password',myController: _controllerPassword,),
               ),
 
               InkWell(
@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
 
               Padding(
               padding: const EdgeInsets.fromLTRB(107,63,0,0),
-              child: Text("Big Kitchen Burger", style: GoogleFonts.inter(textStyle: const TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: Colors.black))),
+              child: Text("Big Kitchen Burger", style: GoogleFonts.inter(textStyle: TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: Theme.of(context).colorScheme.primary))),
             ),
 
             Padding(
