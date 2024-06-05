@@ -14,6 +14,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       
+      
                 height: 48,
                 width: 343,
                 decoration: BoxDecoration(
@@ -22,7 +23,7 @@ class CustomButton extends StatelessWidget {
                 ),
                 child: TextButton(
                  onPressed: onPressed,
-                child: Text(title, style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Color.fromRGBO(255, 255, 255, 1))),)
+                child: Text(title, style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.w700, color: Theme.of(context).colorScheme.primary)),)
                 )
     );
   }

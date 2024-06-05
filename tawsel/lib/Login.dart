@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:tawsel/EntryField.dart';
 import 'package:tawsel/NewHome.dart';
 import 'package:tawsel/SignUp.dart';
 import 'package:tawsel/customButton.dart';
+import 'package:tawsel/theme/theme.dart';
+import 'package:tawsel/theme/theme_provider.dart';
 import 'OrderDriver.dart';
 import 'const.dart';
 
@@ -35,6 +38,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final currentWidth = MediaQuery.of(context).size.width-36.4285;
     final currenheight = MediaQuery.of(context).size.height+128.571429;
+
+    bool light = true;
     
     return  Scaffold(
 
@@ -58,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
               //_entryField('email', _controllerEmail),
               Padding(
             padding: const EdgeInsets.fromLTRB(136, 141, 0,0),
-            child: Text("Login", style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 34, fontWeight: FontWeight.w700)),),
+            child: Text("Login", style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 34, fontWeight: FontWeight.w700, color: Theme.of(context).colorScheme.primary )),),
           ),
 
 
@@ -84,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
               onTap: () => Get.to(SignUp()),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(108,5,0,0),
-                child: Text("don't have an account?", style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Color.fromRGBO(16, 16, 16, 1))),),
+                child: Text("don't have an account?", style: GoogleFonts.tajawal(textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Theme.of(context).colorScheme.primary)),),
               ),
             ),
 
@@ -116,6 +121,24 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.fromLTRB(124,16,0,0),
               child: Text("At your Dinning Table", style: GoogleFonts.inter(textStyle: const TextStyle(fontSize: 16,fontWeight: FontWeight.w700,color: kprimaryColor ))),
             ),
+
+
+            Container(
+                          height:72 ,
+                          width: 375,
+                          child: InkWell(
+                            child: Row(children: [
+                              Text("Light"),
+                              Switch(
+                                value: light, 
+                                onChanged: (bool value){
+                                  setState(() {
+                                    Provider.of<ThemeProvider>(context, listen: false).toggleTheme();
+                                  });
+                                })
+                            ],),
+                          ),
+                        )
               
         
                   ],)),)

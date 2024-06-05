@@ -13,6 +13,7 @@ dependencies:
   firebase_core: ^2.19.6
   firebase_auth: 
   cloud_firestore: 
+  provider:
 
   flutter:
     sdk: flutter

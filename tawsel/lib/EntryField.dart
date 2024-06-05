@@ -16,7 +16,7 @@ class EntryField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: labeltext,
         filled: true,
-        fillColor: Colors.white,
+        fillColor:Colors.white ,
         enabled: true,
         focusedBorder: OutlineInputBorder(
           borderSide: new BorderSide(color: Colors.white),

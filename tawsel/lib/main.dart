@@ -1,6 +1,9 @@
+
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:tawsel/AddAddress.dart';
 import 'package:tawsel/Address.dart';
 import 'package:tawsel/CanceledOrder.dart';
@@ -26,6 +29,8 @@ import 'package:tawsel/Tabbar.dart';
 import 'package:tawsel/favorites.dart';
 import 'package:tawsel/navigation.dart';
 import 'package:tawsel/proccess.dart';
+import 'package:tawsel/theme/theme.dart';
+import 'package:tawsel/theme/theme_provider.dart';
 
 import 'Components.dart';
 import 'MyCart.dart';
@@ -34,8 +39,13 @@ import 'MyOrders.dart';
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    child: MyApp(),
+    ));
 }
+
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -43,11 +53,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        
-        primarySwatch: Colors.blue,
-      ),
+      debugShowCheckedModeBanner: false,
+
+      theme: Provider.of<ThemeProvider>(context).themeData,
+      darkTheme: darkMode,
       home: 
       //Role()
       //NewHome()
@@ -67,7 +76,8 @@ class MyApp extends StatelessWidget {
       //DelivOrRest()
       //Bottom()
       ///MyCart()
-      LoginOrSignUpPage()
+      LoginPage()
+      //LoginOrSignUpPage()
       //ForgotPage()
       //OTPpage()
       
